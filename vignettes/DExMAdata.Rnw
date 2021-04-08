@@ -1,0 +1,157 @@
+% \VignetteIndexEntry{Data for DExMA package}
+% \VignetteKeywords{Gene Expression, Meta-analysis}
+% \VignettePackage{DExMAdata}
+
+\documentclass{article}
+<<style-Sweave, eval=TRUE, echo=FALSE, results=tex>>=
+BiocStyle::latex()
+@
+
+\usepackage[utf8]{inputenc}
+
+\bioctitle[DExMAdata package]{Data for DExMA package}
+\author[1,2]{Juan Antonio Villatoro-García}
+\author[1,2]{Pedro Carmona-Sáez\thanks{\email{pedro.carmona@genyo.es}}}
+\affil[1]{Department of Statistics and Operational Research. University of Granada}
+\affil[2]{Bioinformatics Unit. GENYO, Centre for Genomics and Oncological Research}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\maketitle
+
+packageVersion{\Sexpr{BiocStyle::pkg_ver("DExMAdata")}
+
+\tableofcontents
+\newpage
+
+\section{Package contents}
+
+<<>>=
+library(DExMAdata)
+data(IDsDExMA)
+data(SynonymsDExMA)
+data(avaliableIDs)
+data(avaliableOrganism)
+data(DExMAExampleData)
+@
+
+Firstly, \textbf{DExMAExampleData} contains the objects required to perform the 
+\textbf{DExMA} package examples:
+
+\begin{itemize}
+\item \textbf{listMatrixEX}: a list of four expression matrices. The first two matrices contain 200 genes annotated in entrez and the other two contains 
+175 genes annotated in Offical Gene Symbol.
+<<>>=
+class(listMatrixEX)
+head(listMatrixEX$Study1)
+@
+\item \textbf{listPhenodatas}: a list of four phenodatas corresponding to the 
+four expression matrices of the listMatrixEX object
+<<>>=
+class(listPhenodatas)
+head(listPhenodatas$Study1)
+@
+
+\item \textbf{listExpressionSets}: a list of four ExpressionSets objects. 
+It contains the same information as \emph{listMatrixEX} and 
+\emph{listPhenodatas} objects.
+
+<<>>=
+class(listExpressionSets)
+listExpressionSets$Study1
+@
+
+\item \textbf{ExpressionSetStudy5}: an ExpressionSet object similar to the ExpressionSets objects of \emph{listExpression}
+<<>>=
+class(ExpressionSetStudy5)
+ExpressionSetStudy5
+@
+
+\item \textbf{maObjectDif}: the meta-analysis object (\emph{ObjectMA}) created
+from the listMatrixEX adn phenodatas objects information. An \emph{ObjectMA}
+is the object type used in the DExMA package. This type of object is better 
+explained in the DExMA package
+
+<<>>=
+str(maObjectDif)
+@
+
+\item \textbf{maObjetc}: an \emph{ObjectMA} after setting all the studies of \emph{maObjectDif} in Official Gene Symbol annotation.
+\end{itemize}
+
+<<>>=
+str(maObject)
+@
+
+On the other hand, \textbf{IDsDExMA} and \textbf{SynonymsDExMA} are the 
+neccessary objects to be able to apply the \textit{allSameID()} function  of the package \emph{DExMA}. 
+
+\textbf{IDsDExMA} is a list of 330 dataframes that contains the equivalent official genes symbols to the different IDs or probes. The \emph{Genesymbol}  object of \emph{IDsDExMA} contains other names that have been used as a gene name for an organism.
+
+<<>>=
+class(IDsDExMA)
+length(IDsDExMA)
+names(IDsDExMA)
+head(IDsDExMA$Entrez)
+head(IDsDExMA$Genesymbol)
+class(SynonymsDExMA)
+head(SynonymsDExMA)
+@
+
+\textbf{SynonymsDExMA} is a data.frame of 2 columns that contains other posible names that a gene can have in a organism. It is similar to the \emph{GeneSymbol} of \emph{IDsDExMA} object.
+
+<<>>=
+class(SynonymsDExMA)
+head(SynonymsDExMA)
+@
+
+\textbf{avaliableIDs} is a character vector that contains the different IDs that are avaliable to use in \emph{allSameID} function. It is recommended to look this object before making use of \emph{allSameID} function.
+
+
+<<>>=
+avaliableIDs
+@
+
+\textbf{avaliableOrganism} is a character vector that contains the different organism that are avaliable to use in \emph{allSameID} function. Like \textbf{avaliableIDs} object, it is recommended to look this object before making use of \emph{allSameID} function.
+
+<<>>=
+avaliableOrganism
+@
+
+\section{Sources}
+
+\textbf{listMatrixEX}, \textbf{lisPhenodatas}, \textbf{listExpressionSets} and \textbf{ExpressionSetStudy5} example objects are synthetic.
+
+The \textbf{maObjectDif} example object have been created after applying 
+\emph{createObjectMA()} function from \textbf{DExMA} package 
+to \emph{listMatrixEX} and \emph{listPhenodatas} objects.
+
+The \textbf{maObject} example object have been obtained after applying
+\emph{allSameID()} function from \textbf{DExMA} package to \emph{maObjectDif}
+
+\textbf{IDsDExMA} and \textbf{SynonymsDExMA} objects have been constructed using
+the information avaliable in NCBI GEO \cite{barret2013} and in the 
+NCBI's gene database \cite{ncbi2018}
+
+
+\section{Session info}
+
+<<echo=FALSE>>=
+sessionInfo()
+@
+
+\begin{thebibliography}{9}
+\bibitem{barret2013}
+Barret T., Wilhite S., Ledoux P. and et al. 
+\textit{NCBI GEO: archive for functional genomics data sets--update}
+\textit{Nucleic Acids Research}, 991-995, 2013
+\url{https://doi.org/10.1093/nar/gks1193}
+
+\bibitem{ncbi2018}
+\textit{Database resources of the National Center for Biotechnology information}
+\textit{Nucleic Acids Research}, volume 47, Pages D23–D28, 2019
+\url{https://doi.org/10.1093/nar/gky1069}
+
+\end{thebibliography}
+
+\end{document}

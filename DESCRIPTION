@@ -1,0 +1,13 @@
+Package: DExMAdata
+Type: Package
+Title: Data package for DExMA package
+Version: 0.99.0
+Authors@R: person("Juan Antonio", "Villatoro-García", role = c("aut", "cre"), email = "juanantoniovillatorogarcia@gmail.com")
+Description: Data objects needed to allSameID() function of DExMA package. There are also some objects that are necessary to be able to apply the examples of the DExMA package, which illustrate package functionality.
+Depends: R (>= 4.0)
+Imports: Biobase
+Suggests: BiocStyle
+biocViews: ExperimentData, OrganismData
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
