@@ -1,15 +1,16 @@
 \name{IDsDExMA}
 \alias{IDsDExMA}
 \docType{data}
-\title{Gene/probe ID information}
+\title{Gene ID information}
 \description{
-    IDs contains the equivalent offical gene symbol to the different gene/id
-    probes. It is used by allSameID() function to set all the genes/probes of
-    the datasets in the same official gene symbol.
+    IDsDExMA  contains the equivalences between the different types of IDs. 
+    It also contains a column with the organism to  which the annotation refers.
+    It is used by allSameID() function to set all the genes of
+    the datasets in the same ID.
 }
 \usage{data(IDsDExMA)}
 \format{
-    list. Elements of the list are data.frames
+    data.frame
 }
 \source{
     the information needed to make the object was downloaded from Gene

@@ -3,9 +3,10 @@
 \docType{data}
 \title{Other names for identifiers information}
 \description{
-    Synonyms contains other possible gene names and the organisms they refer to.
-    It is used by allSameID() function to set all the genes/probes of
-    the datasets in the same official gene symbol.
+    SynonymsDExMA contains other possible gene names the organisms they 
+    refer to.
+    It is used by allSameID() function to check all the genes of
+    the datasets annotated in Official Gene Symbol.
 }
 \usage{data(SynonymsDExMA)}
 \format{
