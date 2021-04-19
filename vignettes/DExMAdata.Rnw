@@ -70,7 +70,7 @@ ExpressionSetStudy5
 \item \textbf{maObjectDif}: the meta-analysis object (\emph{ObjectMA}) created
 from the listMatrixEX adn phenodatas objects information. An \emph{ObjectMA}
 is the object type used in the DExMA package. This type of object is better 
-explained in the DExMA package
+explained in the DExMA package.
 
 <<>>=
 str(maObjectDif)
@@ -86,7 +86,9 @@ str(maObject)
 On the other hand, \textbf{IDsDExMA} and \textbf{SynonymsDExMA} are the 
 neccessary objects to be able to apply the \textit{allSameID()} function  of the package \emph{DExMA}. 
 
-\textbf{IDsDExMA} is a list of 330 dataframes that contains the equivalent official genes symbols to the different IDs or probes. The \emph{Genesymbol}  object of \emph{IDsDExMA} contains other names that have been used as a gene name for an organism.
+\textbf{IDsDExMA} is a dataframe that contains the equivalences between 
+the different types of IDs. It also contains a column with the organism to 
+which the annotation refers.
 
 <<>>=
 class(IDsDExMA)
@@ -98,7 +100,8 @@ class(SynonymsDExMA)
 head(SynonymsDExMA)
 @
 
-\textbf{SynonymsDExMA} is a data.frame of 2 columns that contains other posible names that a gene can have in a organism. It is similar to the \emph{GeneSymbol} of \emph{IDsDExMA} object.
+\textbf{SynonymsDExMA} is a data.frame of 3 columns that contains other possible names that a gene can have in a organism and  its equivalent annotation in 
+Official Gene Symbol.
 
 <<>>=
 class(SynonymsDExMA)
