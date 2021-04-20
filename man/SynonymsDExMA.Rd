@@ -3,7 +3,7 @@
 \docType{data}
 \title{Other names for identifiers information}
 \description{
-    SynonymsDExMA contains other possible gene names the organisms they 
+    SynonymsDExMA contains other possible gene names and the organisms they 
     refer to.
     It is used by allSameID() function to check all the genes of
     the datasets annotated in Official Gene Symbol.
