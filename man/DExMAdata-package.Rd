@@ -11,7 +11,7 @@ Data objects needed to allSameID() function of DExMA package. There are also som
 \author{
 Juan Antonio Villatoro-García and Pedro Carmona-Sáez
 
-Maintainer: Juan Antonio Villatoro García<juan.villatoro@genyo.es>
+Maintainer: Juan Antonio Villatoro García<juanantoniovillatorogarcia@gmail.com>
 }
 
 \examples{

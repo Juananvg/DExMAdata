@@ -18,7 +18,7 @@
     ExpressionSetStudy5 is an ExpressionSetObject similar to the ExpressionSets
     objects of listExpressionSets object
     maObjectDif is the meta-analyis object created from the 
-    listMatrixEX and listpheno objects.
+    listMatrixEX and listPhenoDatas objects.
     maObject is the resulting object after setting all the studies 
     in Official Gene Symbol annotation
 }
