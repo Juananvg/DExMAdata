@@ -9,18 +9,20 @@
 \docType{data}
 \title{DExMA synthetic data}
 \description{
-    listMatrixEX is a list of expression matrices with genes in different
+\itemize{
+    \item listMatrixEX is a list of expression matrices with genes in different
     annotation (entrez and Official Gene symbol annotations)
-    listPhenodatas is a list of dataframes objects where each dataframe is a 
-    phenodata of each expression matrix of listMatrixEX object
-    listExpressionSets is a list of ExpressionSets object that have the same 
-    information as listMatrixEX and listPheno.
-    ExpressionSetStudy5 is an ExpressionSetObject similar to the ExpressionSets
-    objects of listExpressionSets object
-    maObjectDif is the meta-analyis object created from the 
+    \item listPhenodatas is a list of dataframes objects where each dataframe 
+    is a phenodata of each expression matrix of listMatrixEX object
+    \item listExpressionSets is a list of ExpressionSets object that have 
+    the same information as listMatrixEX and listPheno.
+    \item ExpressionSetStudy5 is an ExpressionSetObject similar to the 
+    ExpressionSets objects of listExpressionSets object
+    \item maObjectDif is the meta-analyis object created from the 
     listMatrixEX and listPhenoDatas objects.
-    maObject is the resulting object after setting all the studies 
+    \item maObject is the resulting object after setting all the studies 
     in Official Gene Symbol annotation
+}
 }
 \usage{data(DExMAExampleData)}
 \format{
